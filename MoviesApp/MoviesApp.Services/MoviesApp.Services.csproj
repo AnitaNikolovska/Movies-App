@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MoviesApp.DAL\MoviesApp.DAL.csproj" />
+    <ProjectReference Include="..\MoviesApp.InterfaceModels\MoviesApp.InterfaceModels.csproj" />
+    <ProjectReference Include="..\MoviesApp.Mappers\MoviesApp.Mappers.csproj" />
+  </ItemGroup>
+
+</Project>
