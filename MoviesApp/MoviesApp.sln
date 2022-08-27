@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilities", "Utilities\Util
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoviesApp.Mappers", "MoviesApp.Mappers\MoviesApp.Mappers.csproj", "{FDBBF351-4D39-4FED-B0D2-1FE1A469A049}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoviesApp.Configuration", "MoviesApp.Configuration\MoviesApp.Configuration.csproj", "{5936C8A2-87C2-4435-AC46-B1E892693165}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{FDBBF351-4D39-4FED-B0D2-1FE1A469A049}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FDBBF351-4D39-4FED-B0D2-1FE1A469A049}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FDBBF351-4D39-4FED-B0D2-1FE1A469A049}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5936C8A2-87C2-4435-AC46-B1E892693165}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5936C8A2-87C2-4435-AC46-B1E892693165}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5936C8A2-87C2-4435-AC46-B1E892693165}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5936C8A2-87C2-4435-AC46-B1E892693165}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

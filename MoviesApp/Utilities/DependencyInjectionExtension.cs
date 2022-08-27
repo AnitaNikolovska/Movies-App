@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace Utilities
 {
@@ -17,11 +18,17 @@ namespace Utilities
     //Microsoft.EntityFrameworkCore.SqlServer
     public static class DependencyInjectionExtension
     {
-        public static IServiceCollection RegisterModule(this IServiceCollection services)
+        public static IServiceCollection RegisterModule(this IServiceCollection services, string connectionString)
         {
+            services.AddDbContext<MoviesAppDbContext>(options =>
+            {
+                options.UseSqlServer(connectionString);
+            });
+
             services.AddTransient<IMovieService, MovieService>();
 
-            services.AddTransient<IRepository<MovieDto>, MovieStaticDbRepository>();
+            //services.AddTransient<IRepository<MovieDto>, MovieStaticDbRepository>();
+            services.AddTransient<IRepository<MovieDto>, MovieEntityRepository>();
 
             return services;
         }
