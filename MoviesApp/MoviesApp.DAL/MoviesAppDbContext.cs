@@ -20,5 +20,28 @@ namespace MoviesApp.DAL
                : base(option) { }
 
         public DbSet<MovieDto> Movies { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<MovieDto>()
+                .HasData(
+                    new MovieDto
+                    {
+                        Id = 1,
+                        Title = "Titanic",
+                        Description = "Movie about a ship",
+                        Year = 1997,
+                        Genre = 6
+                    },
+                    new MovieDto 
+                    { 
+                        Id = 2,
+                        Title = "Spiderman",
+                        Description = "Boy gets bitten by spider, gets superpowers",
+                        Year = 2002,
+                        Genre = 4
+                    }
+                );
+        }
     }
 }
