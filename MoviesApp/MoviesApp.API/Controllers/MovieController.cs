@@ -1,11 +1,14 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MoviesApp.InterfaceModels.Enums;
 using MoviesApp.InterfaceModels.Models;
 using MoviesApp.Services.Interfaces;
+using System.Security.Claims;
 
 namespace MoviesApp.API.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class MovieController : ControllerBase
@@ -26,18 +29,23 @@ namespace MoviesApp.API.Controllers
         [HttpGet("GetById/{id}")]
         public IActionResult GetMovieById([FromRoute] int id)
         {
-            return Ok(_movieService.GetById(id));
+            var userId = GetAuthorisedUserId();
+            var response = _movieService.GetById(id, userId);
+            return Ok(response);
         }
 
         [HttpGet("GetByGenre/{genre}")]
         public IActionResult GetMovieByGenre([FromRoute] int genre)
         {
-            return Ok(_movieService.GetByGenre(genre));
+            var UserId = GetAuthorisedUserId();
+            var response = _movieService.GetByGenre(genre);
+            return Ok(response);
         }
 
         [HttpPost("Create")]
         public IActionResult CreateMovie([FromBody] MovieModel model)
         {
+            model.UserId = GetAuthorisedUserId();
             _movieService.Create(model);
             return Ok();
         }
@@ -47,6 +55,16 @@ namespace MoviesApp.API.Controllers
         {
             _movieService.Delete(id);
             return Ok();
+        }
+
+        private int GetAuthorisedUserId()
+        {
+            if(!int.TryParse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value, out int UserId))
+            {
+                string name = User.FindFirst(ClaimTypes.Name)?.Value;
+                throw new Exception("Something went wrong");
+            }
+            return UserId;
         }
     }
 }

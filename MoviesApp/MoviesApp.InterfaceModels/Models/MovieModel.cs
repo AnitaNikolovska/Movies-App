@@ -14,5 +14,7 @@ namespace MoviesApp.InterfaceModels.Models
         public string? Description { get; set; }
         public int Year { get; set; }
         public GenreEnum Genre { get; set; }
+
+        public int UserId { get; set; }
     }
 }

@@ -10,7 +10,7 @@ namespace MoviesApp.DAL.Repositories
 {
     public class MovieStaticDbRepository : IRepository<MovieDto>
     {
-        public void AddMovie(MovieDto entity)
+        public void Add(MovieDto entity)
         {
             entity.Id = ++StaticDb.MoviesIdCounter;
             StaticDb.Movies.Add(entity);
@@ -31,9 +31,14 @@ namespace MoviesApp.DAL.Repositories
             return StaticDb.Movies.FirstOrDefault(m => m.Genre == genre);
         }
 
-        public MovieDto GetById(int id)
+        public MovieDto GetById(int id, int userId)
         {
             return StaticDb.Movies.FirstOrDefault(m => m.Id == id);
+        }
+
+        public MovieDto GetById(int id)
+        {
+            throw new NotImplementedException();
         }
     }
 }

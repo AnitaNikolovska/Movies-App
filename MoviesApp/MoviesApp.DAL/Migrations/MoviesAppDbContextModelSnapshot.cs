@@ -38,10 +38,15 @@ namespace MoviesApp.DAL.Migrations
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
                     b.Property<int>("Year")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Movies");
 
@@ -52,6 +57,7 @@ namespace MoviesApp.DAL.Migrations
                             Description = "Movie about a ship",
                             Genre = 6,
                             Title = "Titanic",
+                            UserId = 0,
                             Year = 1997
                         },
                         new
@@ -60,8 +66,63 @@ namespace MoviesApp.DAL.Migrations
                             Description = "Boy gets bitten by spider, gets superpowers",
                             Genre = 4,
                             Title = "Spiderman",
+                            UserId = 0,
                             Year = 2002
                         });
+                });
+
+            modelBuilder.Entity("MoviesApp.DataModels.UserDto", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("FavoriteGenre")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirstName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Password")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Username")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Users");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            FirstName = "Bob",
+                            LastName = "Bobsky",
+                            Password = "?}E?4F?N\r????",
+                            Username = "bbob"
+                        });
+                });
+
+            modelBuilder.Entity("MoviesApp.DataModels.MovieDto", b =>
+                {
+                    b.HasOne("MoviesApp.DataModels.UserDto", "User")
+                        .WithMany("MovieList")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("MoviesApp.DataModels.UserDto", b =>
+                {
+                    b.Navigation("MovieList");
                 });
 #pragma warning restore 612, 618
         }

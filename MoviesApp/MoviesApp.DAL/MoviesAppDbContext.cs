@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MoviesApp.DataModels;
+using MoviesApp.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,10 +20,27 @@ namespace MoviesApp.DAL
         public MoviesAppDbContext(DbContextOptions option)
                : base(option) { }
 
+        public DbSet<UserDto> Users { get; set; }
         public DbSet<MovieDto> Movies { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<MovieDto>()
+                .HasOne(n => n.User)
+                .WithMany(u => u.MovieList)
+                .HasForeignKey(n => n.UserId);
+
+            modelBuilder.Entity<UserDto>()
+                        .HasData(
+                            new UserDto
+                            {
+                                Id = 1,
+                                FirstName = "Bob",
+                                LastName = "Bobsky",
+                                Username = "bbob",
+                                Password = StringHasher.HashGenerator("P@ssw0rd")
+                            });
+
             modelBuilder.Entity<MovieDto>()
                 .HasData(
                     new MovieDto

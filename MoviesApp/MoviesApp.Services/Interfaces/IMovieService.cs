@@ -11,7 +11,7 @@ namespace MoviesApp.Services.Interfaces
     public interface IMovieService
     {
         List<MovieModel> GetAll();
-        MovieModel GetById(int id);
+        MovieModel GetById(int id, int userId);
         MovieModel GetByGenre(int genre);
         void Create(MovieModel model);
         void Delete(int id);

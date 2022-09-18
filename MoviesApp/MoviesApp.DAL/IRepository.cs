@@ -11,8 +11,9 @@ namespace MoviesApp.DAL
     {
         IEnumerable<T> GetAll();
         T GetById(int id);
+        T GetById(int id, int userId);
         T GetByGenre(int genre);
-        void AddMovie(T entity);
+        void Add(T entity);
         void Delete(T entity);
     }
 }

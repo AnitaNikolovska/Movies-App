@@ -3,21 +3,23 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32804.467
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoviesApp.API", "MoviesApp.API\MoviesApp.API.csproj", "{92901A46-9E12-4B39-96A2-138AA474EF63}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MoviesApp.API", "MoviesApp.API\MoviesApp.API.csproj", "{92901A46-9E12-4B39-96A2-138AA474EF63}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoviesApp.DAL", "MoviesApp.DAL\MoviesApp.DAL.csproj", "{F90EE89A-9509-4795-9A09-4F1E03EA98E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MoviesApp.DAL", "MoviesApp.DAL\MoviesApp.DAL.csproj", "{F90EE89A-9509-4795-9A09-4F1E03EA98E4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoviesApp.DataModels", "MoviesApp.DataModels\MoviesApp.DataModels.csproj", "{E968954E-0232-4676-B096-887F002E69D5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MoviesApp.DataModels", "MoviesApp.DataModels\MoviesApp.DataModels.csproj", "{E968954E-0232-4676-B096-887F002E69D5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoviesApp.InterfaceModels", "MoviesApp.InterfaceModels\MoviesApp.InterfaceModels.csproj", "{46CCCF24-2827-4468-B99A-BA13ACD6FE67}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MoviesApp.InterfaceModels", "MoviesApp.InterfaceModels\MoviesApp.InterfaceModels.csproj", "{46CCCF24-2827-4468-B99A-BA13ACD6FE67}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoviesApp.Services", "MoviesApp.Services\MoviesApp.Services.csproj", "{3B2E7744-C530-42B8-84DC-0487E709CA9A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MoviesApp.Services", "MoviesApp.Services\MoviesApp.Services.csproj", "{3B2E7744-C530-42B8-84DC-0487E709CA9A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilities", "Utilities\Utilities.csproj", "{6EC85D8B-01B7-486D-892E-8544022934AB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Utilities", "Utilities\Utilities.csproj", "{6EC85D8B-01B7-486D-892E-8544022934AB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoviesApp.Mappers", "MoviesApp.Mappers\MoviesApp.Mappers.csproj", "{FDBBF351-4D39-4FED-B0D2-1FE1A469A049}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MoviesApp.Mappers", "MoviesApp.Mappers\MoviesApp.Mappers.csproj", "{FDBBF351-4D39-4FED-B0D2-1FE1A469A049}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoviesApp.Configuration", "MoviesApp.Configuration\MoviesApp.Configuration.csproj", "{5936C8A2-87C2-4435-AC46-B1E892693165}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MoviesApp.Configuration", "MoviesApp.Configuration\MoviesApp.Configuration.csproj", "{5936C8A2-87C2-4435-AC46-B1E892693165}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoviesApp.Helpers", "MoviesApp.Helpers\MoviesApp.Helpers.csproj", "{9BBEA418-BD45-4724-AEDD-1FF742D3A430}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{5936C8A2-87C2-4435-AC46-B1E892693165}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5936C8A2-87C2-4435-AC46-B1E892693165}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5936C8A2-87C2-4435-AC46-B1E892693165}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BBEA418-BD45-4724-AEDD-1FF742D3A430}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BBEA418-BD45-4724-AEDD-1FF742D3A430}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BBEA418-BD45-4724-AEDD-1FF742D3A430}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BBEA418-BD45-4724-AEDD-1FF742D3A430}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

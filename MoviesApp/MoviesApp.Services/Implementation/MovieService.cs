@@ -27,9 +27,9 @@ namespace MoviesApp.Services.Implementation
                     .ToList();
         }
 
-        public MovieModel GetById(int id)
+        public MovieModel GetById(int id, int userId)
         {
-            return MovieMapper.ToMovieModel(_movieRepository.GetById(id));
+            return MovieMapper.ToMovieModel(_movieRepository.GetById(id, userId));
         }
         public MovieModel GetByGenre(int genre)
         {
@@ -38,7 +38,7 @@ namespace MoviesApp.Services.Implementation
 
         public void Create(MovieModel model)
         {
-            _movieRepository.AddMovie(MovieMapper.ToMovieDto(model));
+            _movieRepository.Add(MovieMapper.ToMovieDto(model));
         }
 
         public void Delete(int id)

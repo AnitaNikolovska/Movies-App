@@ -26,9 +26,12 @@ namespace Utilities
             });
 
             services.AddTransient<IMovieService, MovieService>();
+            services.AddTransient<IUserService, UserService>();
 
             //services.AddTransient<IRepository<MovieDto>, MovieStaticDbRepository>();
             services.AddTransient<IRepository<MovieDto>, MovieEntityRepository>();
+
+            services.AddTransient<IRepository<UserDto>, UserEntityRepository>();
 
             return services;
         }

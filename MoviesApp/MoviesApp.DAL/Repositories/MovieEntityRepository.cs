@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using XAct.Users;
 
 namespace MoviesApp.DAL.Repositories
 {
@@ -16,7 +17,7 @@ namespace MoviesApp.DAL.Repositories
             _dbContext = dbContext;
         }
 
-        public void AddMovie(MovieDto entity)
+        public void Add(MovieDto entity)
         {
             _dbContext.Movies.Add(entity);
             _dbContext.SaveChanges();
@@ -36,6 +37,11 @@ namespace MoviesApp.DAL.Repositories
         public MovieDto GetByGenre(int genre)
         {
             return _dbContext.Movies.SingleOrDefault(m => m.Genre == genre);
+        }
+
+        public MovieDto GetById(int id, int userId)
+        {
+            return _dbContext.Movies.SingleOrDefault(m => m.Id == id && m.UserId == userId);
         }
 
         public MovieDto GetById(int id)

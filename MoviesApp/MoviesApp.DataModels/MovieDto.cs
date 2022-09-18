@@ -1,4 +1,5 @@
 ﻿using MoviesApp.InterfaceModels.Enums;
+using MoviesApp.InterfaceModels.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,5 +15,8 @@ namespace MoviesApp.DataModels
         public string? Description { get; set; }
         public int Year { get; set; }
         public int Genre { get; set; }
+
+        public int UserId { get; set; }
+        public virtual UserDto User { get; set; }
     }
 }
