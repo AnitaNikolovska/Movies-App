@@ -7,7 +7,7 @@ using XSystem.Security.Cryptography;
 
 namespace MoviesApp.Helpers
 {
-    public class StringHasher
+    public static class StringHasher
     {
         public static string HashGenerator(string input)
         {

@@ -25,13 +25,12 @@ namespace Utilities
                 options.UseSqlServer(connectionString);
             });
 
-            services.AddTransient<IMovieService, MovieService>();
             services.AddTransient<IUserService, UserService>();
-
-            //services.AddTransient<IRepository<MovieDto>, MovieStaticDbRepository>();
-            services.AddTransient<IRepository<MovieDto>, MovieEntityRepository>();
+            services.AddTransient<IMovieService, MovieService>();
 
             services.AddTransient<IRepository<UserDto>, UserEntityRepository>();
+            //services.AddTransient<IRepository<MovieDto>, MovieStaticDbRepository>();
+            services.AddTransient<IRepository<MovieDto>, MovieEntityRepository>();
 
             return services;
         }

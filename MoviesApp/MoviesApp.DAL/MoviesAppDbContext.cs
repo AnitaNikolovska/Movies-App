@@ -40,7 +40,7 @@ namespace MoviesApp.DAL
                                 Username = "bbob",
                                 Password = StringHasher.HashGenerator("P@ssw0rd")
                             });
-
+            
             modelBuilder.Entity<MovieDto>()
                 .HasData(
                     new MovieDto
@@ -49,7 +49,8 @@ namespace MoviesApp.DAL
                         Title = "Titanic",
                         Description = "Movie about a ship",
                         Year = 1997,
-                        Genre = 6
+                        Genre = 6,
+                        UserId = 1
                     },
                     new MovieDto 
                     { 
@@ -57,7 +58,8 @@ namespace MoviesApp.DAL
                         Title = "Spiderman",
                         Description = "Boy gets bitten by spider, gets superpowers",
                         Year = 2002,
-                        Genre = 4
+                        Genre = 4,
+                        UserId = 1
                     }
                 );
         }
