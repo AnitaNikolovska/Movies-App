@@ -59,12 +59,12 @@ namespace MoviesApp.API.Controllers
 
         private int GetAuthorisedUserId()
         {
-            if(!int.TryParse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value, out int UserId))
+            if(!int.TryParse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value, out int userId))
             {
                 string name = User.FindFirst(ClaimTypes.Name)?.Value;
                 throw new Exception("Something went wrong");
             }
-            return UserId;
+            return userId;
         }
     }
 }
