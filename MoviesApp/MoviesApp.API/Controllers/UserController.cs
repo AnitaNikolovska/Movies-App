@@ -15,7 +15,7 @@ namespace MoviesApp.API.Controllers
 
         public UserController(IUserService userService)
         {
-            _userService = _userService;
+            _userService = userService;
         }
 
         [AllowAnonymous]

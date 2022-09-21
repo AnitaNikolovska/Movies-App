@@ -80,7 +80,7 @@ namespace MoviesApp.Services.Implementation
                 FirstName = model.FirstName,
                 LastName = model.LastName,
                 Username = model.Username,
-                Password = model.Password
+                Password = hashedPassword
             };
 
             _userRepository.Add(user);

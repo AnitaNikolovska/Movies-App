@@ -14,6 +14,7 @@ namespace MoviesApp.InterfaceModels.Models
         public string? FirstName { get; set; }
         public string? LastName { get; set; }
         public string? Token { get; set; }
-        public List<MovieModel> Movies = new List<MovieModel> { };
+
+        public List<MovieModel> Movies = new List<MovieModel>();
     }
 }

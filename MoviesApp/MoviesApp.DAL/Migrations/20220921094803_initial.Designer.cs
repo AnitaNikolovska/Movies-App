@@ -11,7 +11,7 @@ using MoviesApp.DAL;
 namespace MoviesApp.DAL.Migrations
 {
     [DbContext(typeof(MoviesAppDbContext))]
-    [Migration("20220918102925_initial")]
+    [Migration("20220921094803_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -59,7 +59,7 @@ namespace MoviesApp.DAL.Migrations
                             Description = "Movie about a ship",
                             Genre = 6,
                             Title = "Titanic",
-                            UserId = 0,
+                            UserId = 1,
                             Year = 1997
                         },
                         new
@@ -68,7 +68,7 @@ namespace MoviesApp.DAL.Migrations
                             Description = "Boy gets bitten by spider, gets superpowers",
                             Genre = 4,
                             Title = "Spiderman",
-                            UserId = 0,
+                            UserId = 1,
                             Year = 2002
                         });
                 });

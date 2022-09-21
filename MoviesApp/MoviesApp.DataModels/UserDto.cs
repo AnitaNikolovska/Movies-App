@@ -18,6 +18,6 @@ namespace MoviesApp.DataModels
         public string? FirstName { get; set; }
         public string? LastName { get; set; }
         public string? FavoriteGenre { get; set; }
-        public IEnumerable<MovieDto>? MovieList { get; set; }
+        public virtual ICollection<MovieDto> MovieList { get; set; }
     }
 }

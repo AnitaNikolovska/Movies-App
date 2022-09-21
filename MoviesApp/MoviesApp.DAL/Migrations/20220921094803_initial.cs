@@ -49,19 +49,19 @@ namespace MoviesApp.DAL.Migrations
                 });
 
             migrationBuilder.InsertData(
-                table: "Movies",
-                columns: new[] { "Id", "Description", "Genre", "Title", "UserId", "Year" },
-                values: new object[] { 1, "Movie about a ship", 6, "Titanic", 0, 1997 });
-
-            migrationBuilder.InsertData(
-                table: "Movies",
-                columns: new[] { "Id", "Description", "Genre", "Title", "UserId", "Year" },
-                values: new object[] { 2, "Boy gets bitten by spider, gets superpowers", 4, "Spiderman", 0, 2002 });
-
-            migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "FavoriteGenre", "FirstName", "LastName", "Password", "Username" },
                 values: new object[] { 1, null, "Bob", "Bobsky", "?}E?4F?N\r????", "bbob" });
+
+            migrationBuilder.InsertData(
+                table: "Movies",
+                columns: new[] { "Id", "Description", "Genre", "Title", "UserId", "Year" },
+                values: new object[] { 1, "Movie about a ship", 6, "Titanic", 1, 1997 });
+
+            migrationBuilder.InsertData(
+                table: "Movies",
+                columns: new[] { "Id", "Description", "Genre", "Title", "UserId", "Year" },
+                values: new object[] { 2, "Boy gets bitten by spider, gets superpowers", 4, "Spiderman", 1, 2002 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Movies_UserId",

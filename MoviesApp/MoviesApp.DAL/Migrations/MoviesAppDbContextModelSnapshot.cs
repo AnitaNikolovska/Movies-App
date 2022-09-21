@@ -57,7 +57,7 @@ namespace MoviesApp.DAL.Migrations
                             Description = "Movie about a ship",
                             Genre = 6,
                             Title = "Titanic",
-                            UserId = 0,
+                            UserId = 1,
                             Year = 1997
                         },
                         new
@@ -66,7 +66,7 @@ namespace MoviesApp.DAL.Migrations
                             Description = "Boy gets bitten by spider, gets superpowers",
                             Genre = 4,
                             Title = "Spiderman",
-                            UserId = 0,
+                            UserId = 1,
                             Year = 2002
                         });
                 });
